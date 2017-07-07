@@ -1,0 +1,80 @@
+{{#esp-menu position="left" pushMenu=pushLeftMenu open=showLeftSlideMenu}}
+  <h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+{{/esp-menu}}
+
+{{#esp-menu position="right" pushMenu=pushRightMenu open=showRightSlideMenu}}
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+{{/esp-menu}}
+
+{{#esp-menu horizontal=true position="top" open=showTopSlideMenu}}
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+{{/esp-menu}}
+
+{{#esp-menu horizontal=true position="bottom" open=showBottomSlideMenu}}
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+{{/esp-menu}}
+
+<div class="container">
+	<header class="clearfix">
+		<span>Blueprint <span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+		<h1>Slide and Push Menus</h1>
+		<nav>
+			<a href="http://tympanus.net/Blueprints/QuotesRotator/" class="bp-icon bp-icon-prev" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
+			<a href="http://tympanus.net/Blueprints/ResponsiveFullWidthGrid/" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a>
+			<a href="http://tympanus.net/codrops/?p=14725" class="bp-icon bp-icon-drop" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
+			<a href="http://tympanus.net/codrops/category/blueprints/" class="bp-icon bp-icon-archive" data-info="Blueprints archive"><span>Go to the archive</span></a>
+		</nav>
+	</header>
+	<div class="main">
+		<section>
+			<h2>Slide Menus</h2>
+			<!-- Class "cbp-spmenu-open" gets applied to menu -->
+			<button id="showLeft" onclick={{action 'toggleMenu' 'leftSlide'}}>Show/Hide Left Slide Menu</button>
+			<button id="showRight" onclick={{action 'toggleMenu' 'rightSlide'}}>Show/Hide Right Slide Menu</button>
+			<button id="showTop" onclick={{action 'toggleMenu' 'topSlide'}}>Show/Hide Top Slide Menu</button>
+			<button id="showBottom" onclick={{action 'toggleMenu' 'bottomSlide'}}>Show/Hide Bottom Slide Menu</button>
+		</section>
+		<section class="buttonset">
+			<h2>Push Menus</h2>
+			<!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
+			<button id="showLeftPush" onclick={{action 'togglePushMenu' 'leftSlide'}}>Show/Hide Left Push Menu</button>
+			<button id="showRightPush" onclick={{action 'togglePushMenu' 'rightSlide'}}>Show/Hide Right Push Menu</button>
+		</section>
+	</div>
+</div>

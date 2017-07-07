@@ -1,0 +1,1 @@
+export { default } from 'ember-slide-push-menu/components/esp-menu';
