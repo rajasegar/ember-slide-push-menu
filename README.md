@@ -6,9 +6,9 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![EmberObserver](http://emberobserver.com/badges/ember-slide-push-menu.svg?branch=master)](http://emberobserver.com/addons/ember-slide-push-menu)
 
-
-
 Fixed menus that will slide out from the sides of the page and in case of the right and left side optionally move the body.
+
+Inspired by this Codrops [article](https://tympanus.net/codrops/2013/04/17/slide-and-push-menus/)
 
 ## Installation
 
