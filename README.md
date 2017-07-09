@@ -17,13 +17,13 @@ ember install ember-slide-push-menu
 ```
 
 ## Demo
-Coming soon
+[Demo](https://rajasegar.github.io/ember-slide-push-menu/)
 
 ## Usage
 
-Render the menu using the component 
+### Render the menu using the component 
 ```hbs
-{{#esp-menu position="left" pushMenu=pushLeftMenu open=showLeftSlideMenu}}
+{{#esp-menu position="left"  open=showLeftSlideMenu}}
   <h3>Menu</h3>
 	<a href="#">Celery seakale</a>
 	<a href="#">Dulse daikon</a>
@@ -34,12 +34,72 @@ Render the menu using the component
 {{/esp-menu}}
 ```
 
-Trigger the menu using a button
+### Trigger the menu using a button
 ```hbs
-<button onclick={{action 'toggleMenu' 'leftSlide'}}>Show/Hide Left Slide Menu</button>
+<button onclick={{action 'toggleMenu' 'showLeftSlideMenu'}}>Show/Hide Left Slide Menu</button>
 ```
 
+### Toggle the property set in your component/route/controller
+```js
+export default Ember.Controller.extend({
+  showLeftSlideMenu: false,
 
+  actions: {
+    toggleMenu(key) {
+      this.toggleProperty('showLeftSlideMenu');
+    },
+  }
+
+});
+
+```
+
+### Use custom class
+```hbs
+{{#esp-menu position="left" pushMenu=pushLeftMenu open=showLeftSlideMenu customClasses='my-custom-menu'}}
+  <h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+{{/esp-menu}}
+```
+
+### Customizing with your class for the menus
+```css
+/* Custom classes */
+.my-custom-menu {
+	  background: red;
+}
+
+.my-custom-menu h3 {
+	  color: yellow;
+	  font-size: 1.9em;
+	  padding: 20px;
+	  margin: 0;
+	  font-weight: 300;
+	  background: maroon;
+}
+
+.my-custom-menu a {
+	  display: block;
+	  color: yellow;
+	  font-size: 1.1em;
+	  font-weight: 300;
+}
+
+.my-custom-menu a:hover {
+	  background: lightred;
+}
+
+.my-custom-menu a:active {
+	  background: maroon;
+	  color: pink;
+}
+
+```
 ## Running
 
 * `ember serve`

@@ -1,3 +1,11 @@
+/**
+   esp-menu component
+   The Main menu component to render the slide and push menus
+
+   @class esp-menu
+*/
+
+
 import Ember from 'ember';
 import layout from '../templates/components/esp-menu';
 
@@ -25,8 +33,39 @@ export default Component.extend({
     'open:cbp-spmenu-open',
     'customClasses'
   ],
+
+  /**
+     Boolean flag to set the menu to horizontal or vertical style
+
+     @public
+     @property horizontal
+     @type { Boolean }
+     @default false
+  */
+
   horizontal: false,
+  /**
+     Boolean computed prperty based on the negative value of horizontal
+
+     @public
+     @property vertical
+     @type { Computed }
+  */
+
   vertical: computed.not('horizontal'),
+  /**
+     Boolean flag to render the menu as either slide or push menu
+
+     - pushMenu = true => Renders Push Menu
+
+     - pushMenu = false => Renders Slide Menu (Default behaviour)
+
+     @public
+     @property pushMenu
+     @type { Boolean }
+     @default false
+  */
+
   pushMenu: false,
   positionClass: computed('position', function() {
     return `cbp-spmenu-${this.get('position')}`;

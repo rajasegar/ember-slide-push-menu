@@ -1,6 +1,7 @@
 {
   "name": "ember-slide-push-menu",
   "description": "The default blueprint for ember-cli addons.",
+  "url": "https://github.com/rajasegar/ember-slide-push-button",
   "version": "0.0.1",
   "options": {
     "paths": [
@@ -11,6 +12,9 @@
     "linkNatives": true,
     "quiet": true,
     "parseOnly": false,
-    "lint": false
+    "lint": false,
+    "enabledEnvironments": ["development","production"],
+    "themedir": "node_modules/yuidoc-ember-theme",
+    "helpers": ["node_modules/yuidoc-ember-theme/helpers/helpers.js"]
   }
 }
