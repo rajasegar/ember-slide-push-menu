@@ -1,32 +1,40 @@
 /* General styles for all menus */
+
+:root {
+    --esp-menu-bg: #47a3da;
+    --esp-menu-heading: #afdefa;
+    --esp-menu-heading-bg: #0d77b6;
+    --esp-menu-link: #fff;
+    --esp-menu-link-hover: #258ecd;
+}
 .cbp-spmenu {
-	background: #47a3da;
+	background: var(--esp-menu-bg);
 	position: fixed;
 }
 
 .cbp-spmenu h3 {
-	color: #afdefa;
+	color: var(--afdefa);
 	font-size: 1.9em;
 	padding: 20px;
 	margin: 0;
 	font-weight: 300;
-	background: #0d77b6;
+	background: var(--esp-menu-heading-bg);
 }
 
 .cbp-spmenu a {
 	display: block;
-	color: #fff;
+	color: var(--esp-menu-link);
 	font-size: 1.1em;
 	font-weight: 300;
 }
 
 .cbp-spmenu a:hover {
-	background: #258ecd;
+	background: var(--esp-menu-link-hover);
 }
 
 .cbp-spmenu a:active {
-	background: #afdefa;
-	color: #47a3da;
+	background: var(--esp-menu-heading);
+	color: var(--esp-menu-bg);
 }
 
 /* Orientation-dependent styles for the content of the menu */
@@ -39,7 +47,7 @@
 }
 
 .cbp-spmenu-vertical a {
-	border-bottom: 1px solid #258ecd;
+	border-bottom: 1px solid var(--esp-menu-link-hover);
 	padding: 1em;
 }
 
@@ -61,7 +69,7 @@
 	float: left;
 	width: 20%;
 	padding: 0.8em;
-	border-left: 1px solid #258ecd;
+	border-left: 1px solid var(--esp-menu-link-hover);
 }
 
 /* Vertical menu that slides from the left or right */

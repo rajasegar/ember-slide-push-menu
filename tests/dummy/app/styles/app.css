@@ -223,3 +223,33 @@ a:hover {
 		text-indent: 30px;
 	}
 }
+
+/* Custom classes */
+.my-custom-menu {
+	  background: red;
+}
+
+.my-custom-menu h3 {
+	  color: yellow;
+	  font-size: 1.9em;
+	  padding: 20px;
+	  margin: 0;
+	  font-weight: 300;
+	  background: maroon;
+}
+
+.my-custom-menu a {
+	  display: block;
+	  color: yellow;
+	  font-size: 1.1em;
+	  font-weight: 300;
+}
+
+.my-custom-menu a:hover {
+	  background: lightred;
+}
+
+.my-custom-menu a:active {
+	  background: maroon;
+	  color: pink;
+}

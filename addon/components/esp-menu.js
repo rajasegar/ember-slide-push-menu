@@ -22,7 +22,8 @@ export default Component.extend({
     'horizontal:cbp-spmenu-horizontal',
     'vertical:cbp-spmenu-vertical',
     'positionClass',
-    'open:cbp-spmenu-open'
+    'open:cbp-spmenu-open',
+    'customClasses'
   ],
   horizontal: false,
   vertical: computed.not('horizontal'),
