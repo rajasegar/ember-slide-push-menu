@@ -12,9 +12,6 @@ moduleForComponent('esp-menu', 'Integration | Component | esp menu', {
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{esp-menu}}`);
 
   assert.equal(this.$().text().trim(), '');
@@ -218,5 +215,24 @@ test('it renders push right menu', function(assert) {
   this.$('#showMenu').click();
   assert.equal(this.$('nav.cbp-spmenu-right.cbp-spmenu-open').length, 0);
   assert.equal($('body.cbp-spmenu-push.cbp-spmenu-push-toleft').length, 0);
+
+});
+
+test('it renders menu with custom classnames', function(assert) {
+
+  this.render(hbs`
+{{#esp-menu position="right"  open=showMenu customClasses='my-custom-menu'}}
+  <h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+{{/esp-menu}}
+`);
+
+  assert.equal(this.$('nav.cbp-spmenu-right').length, 1);
+  assert.equal(this.$('nav.cbp-spmenu-right.my-custom-menu').length, 1);
 
 });

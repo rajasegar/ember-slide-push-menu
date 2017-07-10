@@ -1,9 +1,14 @@
 {
   "name": "ember-slide-push-menu",
   "version": "0.0.3",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Fixed menus that will slide out from the sides of the page and in case of the right and left side optionally move the body.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "menu",
+    "navigation",
+    "slide-menu",
+    "push-menu",
+    "off-canvas"
   ],
   "license": "MIT",
   "author": "Rajasegar Chandran",
@@ -51,6 +56,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoUrl": "https://rajasegar.github.io/ember-slide-push-menu"
+    "demoURL": "https://rajasegar.github.io/ember-slide-push-menu"
   }
 }
