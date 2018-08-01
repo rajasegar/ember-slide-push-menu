@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
 const MENU_PROPERTY_HASH = {
   'leftSlide': 'showLeftSlideMenu',
@@ -12,7 +12,7 @@ const PUSH_MENU_PROPERTY_HASH = {
   'rightSlide': 'pushRightMenu'
 };
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   showLeftSlideMenu: false,
   showRightSlideMenu: false,
   showTopSlideMenu: false,

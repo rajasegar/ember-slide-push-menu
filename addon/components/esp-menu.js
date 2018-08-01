@@ -6,14 +6,12 @@
 */
 
 
-import Ember from 'ember';
-import layout from '../templates/components/esp-menu';
+import { not } from '@ember/object/computed';
 
-const {
-  Component,
-  computed,
-  $
-} = Ember;
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import $ from 'jquery';
+import layout from '../templates/components/esp-menu';
 
 const BODY_PUSH_CLASS = {
   'left': 'cbp-spmenu-push-toright',
@@ -52,7 +50,7 @@ export default Component.extend({
      @type { Computed }
   */
 
-  vertical: computed.not('horizontal'),
+  vertical: not('horizontal'),
   /**
      Boolean flag to render the menu as either slide or push menu
 
