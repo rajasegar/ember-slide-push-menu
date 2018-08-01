@@ -1,6 +1,6 @@
 {
   "name": "ember-slide-push-menu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fixed menus that will slide out from the sides of the page and in case of the right and left side optionally move the body.",
   "keywords": [
     "ember-addon",
