@@ -22,6 +22,7 @@ matrix:
 
 before_install:
   - npm config set spin false
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 install:
   - npm install
@@ -30,10 +31,6 @@ script:
   # Usually, it's ok to finish the test scenario without reverting
   #  to the addon's original dependency state, skipping "cleanup".
   - npm test
-  - npm run coverage
-
-after_success:
-  - npm run coveralls
 
 addons:
   chrome: stable

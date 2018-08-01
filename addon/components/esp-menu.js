@@ -10,7 +10,6 @@ import { not } from '@ember/object/computed';
 
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-import $ from 'jquery';
 import layout from '../templates/components/esp-menu';
 
 const BODY_PUSH_CLASS = {
@@ -75,7 +74,7 @@ export default Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    $('body').addClass('cbp-spmenu-push');
+    document.body.classList.add('cbp-spmenu-push');
   },
 
   didUpdateAttrs() {
@@ -86,16 +85,16 @@ export default Component.extend({
   updateBodyClass() {
     let _bodyClass = this.get('bodyClass');
     // Clean up
-    $('body').removeClass('cbp-spmenu-push-toleft');
-    $('body').removeClass('cbp-spmenu-push-toright');
+    document.body.classList.remove('cbp-spmenu-push-toleft');
+    document.body.classList.remove('cbp-spmenu-push-toright');
     if(this.get('pushMenu')) {
-      $('body').addClass(_bodyClass);
+      document.body.classList.add(_bodyClass);
     }
   },
 
   willDestroyElement() {
     this._super(...arguments);
-    $('body').removeClass('cbp-spmenu-push');
+    document.body.classList.remove('cbp-spmenu-push');
   }
 
 });

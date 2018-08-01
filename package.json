@@ -20,7 +20,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "npm version patch && git push && git push --tags && npm publish"
   },
   "dependencies": {
     "ember-cli-babel": "^6.16.0",
