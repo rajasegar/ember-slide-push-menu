@@ -1,74 +1,74 @@
-{{#esp-menu position="left" pushMenu=pushLeftMenu open=showLeftSlideMenu customClasses='my-custom-menu'}}
+{{#esp-menu position="left" pushMenu=pushLeftMenu open=showLeftSlideMenu customClasses="my-custom-menu"}}
   <h3>Menu</h3>
-	<a href="#">Celery seakale</a>
-	<a href="#">Dulse daikon</a>
-	<a href="#">Zucchini garlic</a>
-	<a href="#">Catsear azuki bean</a>
-	<a href="#">Dandelion bunya</a>
-	<a href="#">Rutabaga</a>
+  <a href="#">Celery seakale</a>
+  <a href="#">Dulse daikon</a>
+  <a href="#">Zucchini garlic</a>
+  <a href="#">Catsear azuki bean</a>
+  <a href="#">Dandelion bunya</a>
+  <a href="#">Rutabaga</a>
 {{/esp-menu}}
 
 {{#esp-menu position="right" pushMenu=pushRightMenu open=showRightSlideMenu}}
-	<h3>Menu</h3>
-	<a href="#">Celery seakale</a>
-	<a href="#">Dulse daikon</a>
-	<a href="#">Zucchini garlic</a>
-	<a href="#">Catsear azuki bean</a>
-	<a href="#">Dandelion bunya</a>
-	<a href="#">Rutabaga</a>
+  <h3>Menu</h3>
+  <a href="#">Celery seakale</a>
+  <a href="#">Dulse daikon</a>
+  <a href="#">Zucchini garlic</a>
+  <a href="#">Catsear azuki bean</a>
+  <a href="#">Dandelion bunya</a>
+  <a href="#">Rutabaga</a>
 {{/esp-menu}}
 
 {{#esp-menu horizontal=true position="top" open=showTopSlideMenu}}
-	<h3>Menu</h3>
-	<a href="#">Celery seakale</a>
-	<a href="#">Dulse daikon</a>
-	<a href="#">Zucchini garlic</a>
-	<a href="#">Catsear azuki bean</a>
-	<a href="#">Dandelion bunya</a>
-	<a href="#">Rutabaga</a>
-	<a href="#">Celery seakale</a>
-	<a href="#">Dulse daikon</a>
-	<a href="#">Zucchini garlic</a>
-	<a href="#">Catsear azuki bean</a>
-	<a href="#">Dandelion bunya</a>
-	<a href="#">Rutabaga</a>
+  <h3>Menu</h3>
+  <a href="#">Celery seakale</a>
+  <a href="#">Dulse daikon</a>
+  <a href="#">Zucchini garlic</a>
+  <a href="#">Catsear azuki bean</a>
+  <a href="#">Dandelion bunya</a>
+  <a href="#">Rutabaga</a>
+  <a href="#">Celery seakale</a>
+  <a href="#">Dulse daikon</a>
+  <a href="#">Zucchini garlic</a>
+  <a href="#">Catsear azuki bean</a>
+  <a href="#">Dandelion bunya</a>
+  <a href="#">Rutabaga</a>
 {{/esp-menu}}
 
 {{#esp-menu horizontal=true position="bottom" open=showBottomSlideMenu}}
-	<h3>Menu</h3>
-	<a href="#">Celery seakale</a>
-	<a href="#">Dulse daikon</a>
-	<a href="#">Zucchini garlic</a>
-	<a href="#">Catsear azuki bean</a>
-	<a href="#">Dandelion bunya</a>
-	<a href="#">Rutabaga</a>
-	<a href="#">Celery seakale</a>
-	<a href="#">Dulse daikon</a>
-	<a href="#">Zucchini garlic</a>
-	<a href="#">Catsear azuki bean</a>
-	<a href="#">Dandelion bunya</a>
-	<a href="#">Rutabaga</a>
+  <h3>Menu</h3>
+  <a href="#">Celery seakale</a>
+  <a href="#">Dulse daikon</a>
+  <a href="#">Zucchini garlic</a>
+  <a href="#">Catsear azuki bean</a>
+  <a href="#">Dandelion bunya</a>
+  <a href="#">Rutabaga</a>
+  <a href="#">Celery seakale</a>
+  <a href="#">Dulse daikon</a>
+  <a href="#">Zucchini garlic</a>
+  <a href="#">Catsear azuki bean</a>
+  <a href="#">Dandelion bunya</a>
+  <a href="#">Rutabaga</a>
 {{/esp-menu}}
 
 <div class="container">
-	<header class="clearfix">
-		<h1>Ember Slide and Push Menus</h1>
-	</header>
-	<div class="main">
+  <header class="clearfix">
+    <h1>Ember Slide and Push Menus</h1>
+  </header>
+  <div class="main">
     <p><a href="docs">Documentation</a></p>
-		<section>
-			<h2>Slide Menus</h2>
-			<!-- Class "cbp-spmenu-open" gets applied to menu -->
-			<button id="showLeft" onclick={{action 'toggleMenu' 'leftSlide'}}>Show/Hide Left Slide Menu</button>
-			<button id="showRight" onclick={{action 'toggleMenu' 'rightSlide'}}>Show/Hide Right Slide Menu</button>
-			<button id="showTop" onclick={{action 'toggleMenu' 'topSlide'}}>Show/Hide Top Slide Menu</button>
-			<button id="showBottom" onclick={{action 'toggleMenu' 'bottomSlide'}}>Show/Hide Bottom Slide Menu</button>
-		</section>
-		<section class="buttonset">
-			<h2>Push Menus</h2>
-			<!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
-			<button id="showLeftPush" onclick={{action 'togglePushMenu' 'leftSlide'}}>Show/Hide Left Push Menu</button>
-			<button id="showRightPush" onclick={{action 'togglePushMenu' 'rightSlide'}}>Show/Hide Right Push Menu</button>
-		</section>
-	</div>
+    <section>
+      <h2>Slide Menus</h2>
+      {{!-- <!-- Class "cbp-spmenu-open" gets applied to menu --> --}}
+      <button id="showLeft" onclick={{action "toggleMenu" "leftSlide"}}>Show/Hide Left Slide Menu</button>
+      <button id="showRight" onclick={{action "toggleMenu" "rightSlide"}}>Show/Hide Right Slide Menu</button>
+      <button id="showTop" onclick={{action "toggleMenu" "topSlide"}}>Show/Hide Top Slide Menu</button>
+      <button id="showBottom" onclick={{action "toggleMenu" "bottomSlide"}}>Show/Hide Bottom Slide Menu</button>
+    </section>
+    <section class="buttonset">
+      <h2>Push Menus</h2>
+      {{!-- <!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body --> --}}
+      <button id="showLeftPush" onclick={{action "togglePushMenu" "leftSlide"}}>Show/Hide Left Push Menu</button>
+      <button id="showRightPush" onclick={{action "togglePushMenu" "rightSlide"}}>Show/Hide Right Push Menu</button>
+    </section>
+  </div>
 </div>

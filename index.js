@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-slide-push-menu'
+  name: require('./package').name
 };

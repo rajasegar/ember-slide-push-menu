@@ -7,7 +7,21 @@
 [![devDependencies Status](https://david-dm.org/rajasegar/ember-slide-push-menu/dev-status.svg)](https://david-dm.org/rajasegar/ember-slide-push-menu?type=dev)
 [![EmberObserver](http://emberobserver.com/badges/ember-slide-push-menu.svg?branch=master)](http://emberobserver.com/addons/ember-slide-push-menu)
 
+<<<<<<< HEAD
 Fixed menus that will slide out from the sides of the page and in case of the right and left side optionally move the body.
+=======
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.4 or above
+* Ember CLI v2.13 or above
+* Node.js v8 or above
+
+
+Installation
+------------------------------------------------------------------------------
+>>>>>>> 10edd59... v3.3.0...v3.12.0
 
 Inspired by this Codrops [article](https://tympanus.net/codrops/2013/04/17/slide-and-push-menus/)
 
@@ -55,6 +69,7 @@ export default Ember.Controller.extend({
 
 ```
 
+<<<<<<< HEAD
 ### Use custom class
 ```hbs
 {{#esp-menu position="left" pushMenu=pushLeftMenu open=showLeftSlideMenu customClasses='my-custom-menu'}}
@@ -117,3 +132,12 @@ export default Ember.Controller.extend({
 * `ember build`
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+=======
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
+>>>>>>> 10edd59... v3.3.0...v3.12.0
