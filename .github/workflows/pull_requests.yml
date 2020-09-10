@@ -58,4 +58,4 @@ jobs:
     - name: Install
       run: yarn install
     - name: Test with ${{ matrix.scenario }}
-      run: yarn test:ember-compatibility ${{ matrix.scenario }}
+      run: yarn test:try-one ${{ matrix.scenario }}
