@@ -27,6 +27,7 @@ devDependencies:
   ember-resolver: 8.0.2
   ember-source: 3.21.1
   ember-template-lint: 2.11.0
+  ember-try: 1.4.0
   eslint: 7.8.1
   eslint-plugin-node: 11.1.0_eslint@7.8.1
   loader.js: 4.7.0
@@ -2804,6 +2805,12 @@ packages:
       node: '>= 0.6.0'
     resolution:
       integrity: sha1-c5JncZI7Whl0etZmqlzUv5xunOg=
+  /base64-js/0.0.2:
+    dev: true
+    engines:
+      node: '>= 0.4'
+    resolution:
+      integrity: sha1-Ak8Pcq+iW3X5wO5zzU9V7Bvtl4Q=
   /base64-js/1.3.1:
     dev: true
     resolution:
@@ -2913,6 +2920,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-5LoM5BCkaTYyM2dgnstOZVMSUGk=
+  /bops/0.0.3:
+    dependencies:
+      base64-js: 0.0.2
+      to-utf8: 0.0.1
+    dev: true
+    resolution:
+      integrity: sha1-xcv2/qi+dAHKXqbRZ55sTotAfHk=
   /bottleneck/2.19.5:
     dev: true
     resolution:
@@ -3677,6 +3691,12 @@ packages:
       node: 6.* || 8.* || >= 10.*
     resolution:
       integrity: sha512-PiT/hQmTonHhl/HFGN+Lx3JJUznrVYJ3+AQsnthneZbvW7x+f08Tk7yLJTLEOUvBTbduLeeBkxEaYXUOUrRq6g==
+  /capture-stack-trace/1.0.1:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
   /cardinal/1.0.0:
     dependencies:
       ansicolors: 0.2.1
@@ -3878,6 +3898,17 @@ packages:
       node: '>= 0.2.0'
     resolution:
       integrity: sha1-9TsFJmqLGguTSz0IIebi3FkUriM=
+  /cli-table3/0.5.1:
+    dependencies:
+      object-assign: 4.1.1
+      string-width: 2.1.1
+    dev: true
+    engines:
+      node: '>=6'
+    optionalDependencies:
+      colors: 1.4.0
+    resolution:
+      integrity: sha512-7Qg2Jrep1S/+Q3EceiZtQcDPWxhAvBw+ERf1162v4sikJrvojMHFqXt8QIVha8UlH9rgU0BeWPytZ9/TzYqlUw==
   /cli-width/2.2.1:
     dev: true
     resolution:
@@ -4297,6 +4328,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-mf+TCx8wWc9VpuxfP2ht0iSISLZnt0JgWlrOKZiNqyUZWnjIaCIVNQArMHnCZKfEYRg6IM7A+NeJoN8gf/Ws0A==
+  /create-error-class/3.0.2:
+    dependencies:
+      capture-stack-trace: 1.0.1
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-Br56vvlHo/FKMP1hBnHUAbyot7Y=
   /create-hash/1.2.0:
     dependencies:
       cipher-base: 1.0.4
@@ -4613,6 +4652,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
+  /duplex/1.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-arxcFuwX5MV4V4cnEmcAWQ06Ldo=
   /duplexer2/0.1.4:
     dependencies:
       readable-stream: 2.3.7
@@ -5218,6 +5261,15 @@ packages:
       node: 8.* || 10.* || >= 12
     resolution:
       integrity: sha512-89oVHVJwmLDvGvAUWgS87KpBoRhy3aZ6U0Ql6HOmU4TrPkyaa8pM0W81wj9cIwjYprcQtN9EwzZMHnq46+oUyw==
+  /ember-source-channel-url/1.2.0:
+    dependencies:
+      got: 8.3.2
+    dev: true
+    engines:
+      node: 6.* || 8.* || >= 10.*
+    hasBin: true
+    resolution:
+      integrity: sha512-CLClcHzVf+8GoFk4176R16nwXoel70bd7DKVAY6D8M0m5fJJhbTrAPYpDA0lY8A60HZo9j/s8A8LWiGh1YmdZg==
   /ember-source-channel-url/2.0.1:
     dependencies:
       got: 8.3.2
@@ -5302,6 +5354,43 @@ packages:
       node: 6.* || 8.* || >= 10.*
     resolution:
       integrity: sha512-aEw7YuutLuJT4NUuPTNiGFwgTYl23ThqmBxSkfFimQAn+keWjAftykk3dlFELuhsJhYW/S8YoVjN0bSAQRLNtw==
+  /ember-try-config/3.0.0:
+    dependencies:
+      ember-source-channel-url: 1.2.0
+      lodash: 4.17.20
+      package-json: 4.0.1
+      remote-git-tags: 2.0.0
+      rsvp: 4.8.5
+      semver: 5.7.1
+    dev: true
+    engines:
+      node: ^4.5 || 6.* || >= 7.*
+    resolution:
+      integrity: sha512-pNwHS29O1ACczkrxBKRtDY0TzTb7uPnA5eHEe+4NF6qpLK5FVnL3EtgZ8+yVYtnm1If5mZ07rIubw45vaSek7w==
+  /ember-try/1.4.0:
+    dependencies:
+      chalk: 2.4.2
+      cli-table3: 0.5.1
+      core-object: 3.1.5
+      debug: 4.1.1
+      ember-try-config: 3.0.0
+      execa: 1.0.0
+      extend: 3.0.2
+      fs-extra: 5.0.0
+      promise-map-series: 0.2.3
+      resolve: 1.17.0
+      rimraf: 2.7.1
+      rsvp: 4.8.5
+      walk-sync: 1.1.4
+    dev: true
+    engines:
+      node: 6.* || 8.* || >= 10.*
+    resolution:
+      integrity: sha512-o0SoCH4K8umCf8etphla8FDygKfQGkwY+w47wEuYFVKaESrOZaK63ObnAK7DTKkjJU74Fss2abf+r+pAWpX43g==
+  /emit-function/0.0.2:
+    dev: true
+    resolution:
+      integrity: sha1-46ULPWG+G/jKiLkkv3ExV6W+wSQ=
   /emoji-regex/7.0.3:
     dev: true
     resolution:
@@ -6463,6 +6552,15 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
+  /git-fetch-pack/0.1.1:
+    dependencies:
+      bops: 0.0.3
+      emit-function: 0.0.2
+      git-packed-ref-parse: 0.0.0
+      through: 2.2.7
+    dev: true
+    resolution:
+      integrity: sha1-dwOjLPDbgPBg0nZqNKwA0CzrzfU=
   /git-hooks-list/1.0.3:
     dev: true
     resolution:
@@ -6478,12 +6576,43 @@ packages:
     dev: true
     resolution:
       integrity: sha1-LmpMGxP8AAKCB7p5WnrDFme5/Uo=
+  /git-packed-ref-parse/0.0.0:
+    dependencies:
+      line-stream: 0.0.0
+      through: 2.2.7
+    dev: true
+    resolution:
+      integrity: sha1-uFBGkx8+SmVnm13lSvOl0983JkY=
+  /git-read-pkt-line/0.0.8:
+    dependencies:
+      bops: 0.0.3
+      through: 2.2.7
+    dev: true
+    resolution:
+      integrity: sha1-SUA3hU7Ve9kM1VZ2VA2GqwyzbKo=
   /git-repo-info/2.1.1:
     dev: true
     engines:
       node: '>= 4.0'
     resolution:
       integrity: sha512-8aCohiDo4jwjOwma4FmYFd3i97urZulL8XL24nIPxuE+GZnfsAyy/g2Shqx6OjUiFKUXZM+Yy+KHnOmmA3FVcg==
+  /git-transport-protocol/0.1.0:
+    dependencies:
+      duplex: 1.0.0
+      emit-function: 0.0.2
+      git-read-pkt-line: 0.0.8
+      git-write-pkt-line: 0.1.0
+      through: 2.2.7
+    dev: true
+    resolution:
+      integrity: sha1-mfTdY4m5Fh7e10qeYX1rpe0KbCw=
+  /git-write-pkt-line/0.1.0:
+    dependencies:
+      bops: 0.0.3
+      through: 2.2.7
+    dev: true
+    resolution:
+      integrity: sha1-qEwYVsCQEZCDibLwb5EdkfY5RpQ=
   /glob-parent/3.1.0:
     dependencies:
       is-glob: 3.1.0
@@ -6596,6 +6725,24 @@ packages:
     dev: true
     resolution:
       integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
+  /got/6.7.1:
+    dependencies:
+      create-error-class: 3.0.2
+      duplexer3: 0.1.4
+      get-stream: 3.0.0
+      is-redirect: 1.0.0
+      is-retry-allowed: 1.2.0
+      is-stream: 1.1.0
+      lowercase-keys: 1.0.1
+      safe-buffer: 5.2.1
+      timed-out: 4.0.1
+      unzip-response: 2.0.1
+      url-parse-lax: 1.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-JAzQV4WpoY5WHcG0S0HHY+8ejbA=
   /got/8.3.2:
     dependencies:
       '@sindresorhus/is': 0.7.0
@@ -7357,6 +7504,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-5Aw8LLVsDlZsETVMhoMXzqsXwQqr/0vlnBYzIXJbYo2F4yYlhLHs+Ez7Bod7IIQKWkJbJfxrWD7pA1Dw1TKrwA==
+  /is-redirect/1.0.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-HQPd7VO9jbDzDCbk+V02/HyH3CQ=
   /is-regex/1.1.1:
     dependencies:
       has-symbols: 1.0.1
@@ -7802,6 +7955,12 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==
+  /line-stream/0.0.0:
+    dependencies:
+      through: 2.2.7
+    dev: true
+    resolution:
+      integrity: sha1-iIt8x5UcagXOTWlt0ea4JiNxu0U=
   /lines-and-columns/1.1.6:
     dev: true
     resolution:
@@ -9256,6 +9415,17 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
+  /package-json/4.0.1:
+    dependencies:
+      got: 6.7.1
+      registry-auth-token: 3.4.0
+      registry-url: 3.1.0
+      semver: 5.7.1
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-iGmgQBJTZhxMTKPabCEh7VVfXu0=
   /pako/1.0.11:
     dev: true
     resolution:
@@ -9532,6 +9702,12 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
+  /prepend-http/1.0.4:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
   /prepend-http/2.0.0:
     dev: true
     engines:
@@ -9976,6 +10152,13 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-TQ4KXRnIn6tz6tjnrXEkD/sshygKH/j5KzK86X8MkeHyZ8qst/LZ89j3X4/8HEIfHANTFIP/AbXakeRhWIl5YQ==
+  /registry-auth-token/3.4.0:
+    dependencies:
+      rc: 1.2.8
+      safe-buffer: 5.2.1
+    dev: true
+    resolution:
+      integrity: sha512-4LM6Fw8eBQdwMYcES4yTnn2TqIasbXuwDx3um+QRs7S55aMKCBKBxvPXl2RiUjHwuJLTyYfxSpmfSAjQpcuP+A==
   /registry-auth-token/4.2.0:
     dependencies:
       rc: 1.2.8
@@ -9984,6 +10167,14 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-P+lWzPrsgfN+UEpDS3U8AQKg/UjZX6mQSJueZj3EK+vNESoqBSpBUD3gmu4sF9lOsjXWjF11dQKUqemf3veq1w==
+  /registry-url/3.1.0:
+    dependencies:
+      rc: 1.2.8
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-PU74cPc93h138M+aOBQyRE4XSUI=
   /regjsgen/0.2.0:
     dev: true
     resolution:
@@ -10004,6 +10195,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-64O87/dPDgfk8/RQqC4gkZoGyyWFIEUTTh80CU6CWuK5vkCGyekIx+oKcEIYtP/RAxSQltCZHCNu/mdd7fqlJw==
+  /remote-git-tags/2.0.0:
+    dependencies:
+      git-fetch-pack: 0.1.1
+      git-transport-protocol: 0.1.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-EVLznPi1Jorg5DB2Nu90HsNBZkw=
   /remove-trailing-separator/1.1.0:
     dev: true
     resolution:
@@ -11295,6 +11495,10 @@ packages:
       node: '>=0.8'
     resolution:
       integrity: sha512-49WtAWS+tcsy93dRt6P0P3AMD2m5PvXRhuEA0kaXos5ZLlujtYmpmFsB+QvWUSxE1ZsstmYXfQ7L40+EcQgpAQ==
+  /through/2.2.7:
+    dev: true
+    resolution:
+      integrity: sha1-bo4hIAGR1OtqmfbwEN9Gqhxusr0=
   /through/2.3.8:
     dev: true
     resolution:
@@ -11434,6 +11638,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FWtleNAtZ/Ki2qtqej2CXTOayOH9bHDQF+Q48VpWyDXjbYxA4Yz8iDB31zXOBUlOHHKidDbqGVrTUvQMPmBGBw==
+  /to-utf8/0.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-0Xrqcv8vujm55DYBvns/9y4ImFI=
   /toidentifier/1.0.0:
     dev: true
     engines:
@@ -11707,6 +11915,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-F+soB5h/dpUunASF/DEdBqgmouA=
+  /unzip-response/2.0.1:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-0vD3N9FrBhXnKmk17QQhRXLVb5c=
   /upath/1.2.0:
     dev: true
     engines:
@@ -11729,6 +11943,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-jk1+QP6ZJqyOiuEI9AEWQfju/nB2Pw466kbA0LEZljHwKeMgd9WrAEgEGxjPDD2+TNbbb37rTyhEfrCXfuKXnA==
+  /url-parse-lax/1.0.0:
+    dependencies:
+      prepend-http: 1.0.4
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-evjzA2Rem9eaJy56FKxovAYJ2nM=
   /url-parse-lax/3.0.0:
     dependencies:
       prepend-http: 2.0.0
@@ -12252,6 +12474,7 @@ specifiers:
   ember-resolver: ^8.0.2
   ember-source: ^3.21.1
   ember-template-lint: ^2.11.0
+  ember-try: ^1.4.0
   eslint: ^7.8.0
   eslint-plugin-node: ^11.1.0
   loader.js: ^4.7.0
