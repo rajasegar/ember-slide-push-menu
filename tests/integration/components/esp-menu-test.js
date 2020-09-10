@@ -13,15 +13,15 @@ module('Integration | Component | esp menu', function(hooks) {
 
   test('it renders', async function(assert) {
 
-    await render(hbs`{{esp-menu}}`);
+    await render(hbs`<EspMenu/>`);
 
     assert.equal(find('*').textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      {{#esp-menu}}
+      <EspMenu>
         template block text
-      {{/esp-menu}}
+      </EspMenu>
     `);
 
     assert.equal(find('*').textContent.trim(), 'template block text');
@@ -30,14 +30,14 @@ module('Integration | Component | esp menu', function(hooks) {
   test('it renders slide left menu', async function(assert) {
     this.set('showLeftSlideMenu', false);
 
-    this.actions.showMenu = () => {
+    this.showMenu = () => {
       let _property = this.get('showLeftSlideMenu');
       this.set('showLeftSlideMenu', !_property);
     };
 
 
     await render(hbs`
-  {{#esp-menu position="left" open=showLeftSlideMenu }}
+  <EspMenu @position="left" @open={{this.showLeftSlideMenu}} > 
     <h3>Menu</h3>
       <a href="#">Celery seakale</a>
       <a href="#">Dulse daikon</a>
@@ -45,8 +45,8 @@ module('Integration | Component | esp menu', function(hooks) {
       <a href="#">Catsear azuki bean</a>
       <a href="#">Dandelion bunya</a>
       <a href="#">Rutabaga</a>
-  {{/esp-menu}}
-              <button id="showLeft" onclick={{action 'showMenu' 'leftSlide'}}>Show/Hide Left Slide Menu</button>
+  </EspMenu>
+              <button id="showLeft" {{ on "click" (fn this.showMenu  'leftSlide')}}>Show/Hide Left Slide Menu</button>
   `);
 
     assert.equal(findAll('nav.cbp-spmenu-left').length, 1);
@@ -60,14 +60,14 @@ module('Integration | Component | esp menu', function(hooks) {
   test('it renders slide right menu', async function(assert) {
     this.set('showRightSlideMenu', false);
 
-    this.actions.toggleMenu = () => {
+    this.toggleMenu = () => {
       let _property = this.get('showRightSlideMenu');
       this.set('showRightSlideMenu', !_property);
     };
 
 
     await render(hbs`
-  {{#esp-menu position="right" open=showRightSlideMenu }}
+  <EspMenu @position="right" @open={{this.showRightSlideMenu }}>
     <h3>Menu</h3>
       <a href="#">Celery seakale</a>
       <a href="#">Dulse daikon</a>
@@ -75,8 +75,8 @@ module('Integration | Component | esp menu', function(hooks) {
       <a href="#">Catsear azuki bean</a>
       <a href="#">Dandelion bunya</a>
       <a href="#">Rutabaga</a>
-  {{/esp-menu}}
-              <button id="showLeft" onclick={{action 'toggleMenu' }}>Show/Hide Right Slide Menu</button>
+  </EspMenu>
+              <button id="showLeft" {{ on "click" (fn this.toggleMenu )}}>Show/Hide Right Slide Menu</button>
   `);
 
     assert.equal(findAll('nav.cbp-spmenu-right').length, 1);
@@ -90,14 +90,14 @@ module('Integration | Component | esp menu', function(hooks) {
   test('it renders slide top menu', async function(assert) {
     this.set('showTopSlideMenu', false);
 
-    this.actions.toggleMenu = () => {
+    this.toggleMenu = () => {
       let _property = this.get('showTopSlideMenu');
       this.set('showTopSlideMenu', !_property);
     };
 
 
     await render(hbs`
-  {{#esp-menu horizontal=true position="top" open=showTopSlideMenu }}
+  <EspMenu @horizontal=true @position="top" @open={{this.showTopSlideMenu }}>
     <h3>Menu</h3>
       <a href="#">Celery seakale</a>
       <a href="#">Dulse daikon</a>
@@ -105,8 +105,8 @@ module('Integration | Component | esp menu', function(hooks) {
       <a href="#">Catsear azuki bean</a>
       <a href="#">Dandelion bunya</a>
       <a href="#">Rutabaga</a>
-  {{/esp-menu}}
-              <button id="showMenu" onclick={{action 'toggleMenu' }}>Show/Hide Slide Menu</button>
+  </EspMenu>
+              <button id="showMenu" {{ on "click" (fn  this.toggleMenu )}}>Show/Hide Slide Menu</button>
   `);
 
     assert.equal(findAll('nav.cbp-spmenu-top').length, 1);
@@ -120,14 +120,14 @@ module('Integration | Component | esp menu', function(hooks) {
   test('it renders slide bottom menu', async function(assert) {
     this.set('showMenu', false);
 
-    this.actions.toggleMenu = () => {
+    this.toggleMenu = () => {
       let _property = this.get('showMenu');
       this.set('showMenu', !_property);
     };
 
 
     await render(hbs`
-  {{#esp-menu horizontal=true position="bottom" open=showMenu }}
+  <EspMenu @horizontal=true @position="bottom" @open={{this.showMenu }}>
     <h3>Menu</h3>
       <a href="#">Celery seakale</a>
       <a href="#">Dulse daikon</a>
@@ -135,8 +135,8 @@ module('Integration | Component | esp menu', function(hooks) {
       <a href="#">Catsear azuki bean</a>
       <a href="#">Dandelion bunya</a>
       <a href="#">Rutabaga</a>
-  {{/esp-menu}}
-              <button id="showMenu" onclick={{action 'toggleMenu' }}>Show/Hide Slide Menu</button>
+  </EspMenu>
+              <button id="showMenu" {{ on "click" (fn this.toggleMenu )}}>Show/Hide Slide Menu</button>
   `);
 
     assert.equal(findAll('nav.cbp-spmenu-bottom').length, 1);
@@ -151,7 +151,7 @@ module('Integration | Component | esp menu', function(hooks) {
     this.set('showMenu', false);
     this.set('pushMenu', false);
 
-    this.actions.toggleMenu = () => {
+    this.toggleMenu = () => {
       let _show = this.get('showMenu');
       let _push = this.get('pushMenu');
       this.set('showMenu', !_show);
@@ -160,7 +160,7 @@ module('Integration | Component | esp menu', function(hooks) {
 
 
     await render(hbs`
-  {{#esp-menu position="left" pushMenu=pushMenu open=showMenu }}
+  <EspMenu  @position="left" @pushMenu={{this.pushMenu}} @open={{this.showMenu }}>
     <h3>Menu</h3>
       <a href="#">Celery seakale</a>
       <a href="#">Dulse daikon</a>
@@ -168,8 +168,8 @@ module('Integration | Component | esp menu', function(hooks) {
       <a href="#">Catsear azuki bean</a>
       <a href="#">Dandelion bunya</a>
       <a href="#">Rutabaga</a>
-  {{/esp-menu}}
-              <button id="showMenu" onclick={{action 'toggleMenu' }}>Show/Hide Push Menu</button>
+  </EspMenu>
+              <button id="showMenu" {{ on "click" (fn  this.toggleMenu )}}>Show/Hide Push Menu</button>
   `);
 
     assert.equal(findAll('nav.cbp-spmenu-left').length, 1);
@@ -187,7 +187,7 @@ module('Integration | Component | esp menu', function(hooks) {
     this.set('showMenu', false);
     this.set('pushMenu', false);
 
-    this.actions.toggleMenu = () => {
+    this.toggleMenu = () => {
       let _show = this.get('showMenu');
       let _push = this.get('pushMenu');
       this.set('showMenu', !_show);
@@ -196,7 +196,7 @@ module('Integration | Component | esp menu', function(hooks) {
 
 
     await render(hbs`
-  {{#esp-menu position="right" pushMenu=pushMenu open=showMenu }}
+  <EspMenu  @position="right" @pushMenu={{this.pushMenu}} @open={{this.showMenu }}>
     <h3>Menu</h3>
       <a href="#">Celery seakale</a>
       <a href="#">Dulse daikon</a>
@@ -204,8 +204,8 @@ module('Integration | Component | esp menu', function(hooks) {
       <a href="#">Catsear azuki bean</a>
       <a href="#">Dandelion bunya</a>
       <a href="#">Rutabaga</a>
-  {{/esp-menu}}
-              <button id="showMenu" onclick={{action 'toggleMenu' }}>Show/Hide Push Menu</button>
+  </EspMenu>
+              <button id="showMenu" {{ on "click" (fn this.toggleMenu )}}>Show/Hide Push Menu</button>
   `);
 
     assert.equal(findAll('nav.cbp-spmenu-right').length, 1);
@@ -222,7 +222,7 @@ module('Integration | Component | esp menu', function(hooks) {
   test('it renders menu with custom classnames', async function(assert) {
 
     await render(hbs`
-  {{#esp-menu position="right"  open=showMenu customClasses='my-custom-menu'}}
+  <EspMenu  @position="right"  @open={{this.showMenu}} @customClasses='my-custom-menu'>
     <h3>Menu</h3>
       <a href="#">Celery seakale</a>
       <a href="#">Dulse daikon</a>
@@ -230,7 +230,7 @@ module('Integration | Component | esp menu', function(hooks) {
       <a href="#">Catsear azuki bean</a>
       <a href="#">Dandelion bunya</a>
       <a href="#">Rutabaga</a>
-  {{/esp-menu}}
+  </EspMenu>
   `);
 
     assert.equal(findAll('nav.cbp-spmenu-right').length, 1);

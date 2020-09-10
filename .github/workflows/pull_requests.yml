@@ -1,0 +1,61 @@
+name: Pull Requests
+
+# Inspiration:
+# https://github.com/alexdiliberto/ember-transformicons/blob/master/.github/workflows/ci.yml
+on:
+  pull_request:
+
+env:
+  CI: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: rwjblue/setup-volta@v1
+    - name: Install
+      run: yarn install
+    - name: ESLint
+      run: yarn lint:js
+    - name: Templates
+      run: yarn lint:hbs
+
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v1
+    - uses: rwjblue/setup-volta@v1
+
+    - name: yarn install, run coveralls
+      env:
+        COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
+      run: |
+        yarn install
+        yarn test:ember
+        yarn coveralls
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  tests_ember_compat:
+    name: Ember Compatability
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scenario:
+        - "ember-lts-3.16"
+        - "ember-release"
+        - "ember-beta"
+    steps:
+    - uses: actions/checkout@v1
+    - uses: rwjblue/setup-volta@v1
+    - name: Install
+      run: yarn install
+    - name: Test with ${{ matrix.scenario }}
+      run: yarn test:ember-compatibility ${{ matrix.scenario }}

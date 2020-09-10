@@ -1,4 +1,6 @@
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 const MENU_PROPERTY_HASH = {
   'leftSlide': 'showLeftSlideMenu',
@@ -12,23 +14,24 @@ const PUSH_MENU_PROPERTY_HASH = {
   'rightSlide': 'pushRightMenu'
 };
 
-export default Controller.extend({
-  showLeftSlideMenu: false,
-  showRightSlideMenu: false,
-  showTopSlideMenu: false,
-  pushLeftMenu: false,
-  pushRightMenu: false,
+export default class IndexController extends Controller {
+  @tracked showLeftSlideMenu = false;
+  @tracked showRightSlideMenu = false;
+  @tracked showTopSlideMenu = false;
+  @tracked showBottomSlideMenu = false;
+  @tracked pushLeftMenu = false;
+  @tracked pushRightMenu = false;
 
-  actions: {
+    @action
     toggleMenu(key) {
-      this.toggleProperty(MENU_PROPERTY_HASH[key]);
-    },
-
-    togglePushMenu(key) {
-      this.toggleProperty(MENU_PROPERTY_HASH[key]);
-      this.toggleProperty(PUSH_MENU_PROPERTY_HASH[key]);
+      this[MENU_PROPERTY_HASH[key]] = !this[MENU_PROPERTY_HASH[key]];
     }
 
-  }
+    @action
+    togglePushMenu(key) {
+      this[MENU_PROPERTY_HASH[key]] =  !this[MENU_PROPERTY_HASH[key]];
+      this[PUSH_MENU_PROPERTY_HASH[key]] = !this[PUSH_MENU_PROPERTY_HASH[key]];
+    }
 
-});
+
+}

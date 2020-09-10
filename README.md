@@ -11,7 +11,6 @@ Fixed menus that will slide out from the sides of the page and in case of the ri
 
 Inspired by this Codrops [article](https://tympanus.net/codrops/2013/04/17/slide-and-push-menus/)
 
-## Installation
 
 ```sh
 ember install ember-slide-push-menu

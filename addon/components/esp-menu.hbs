@@ -1,0 +1,7 @@
+<nav class="{{ this.classNames }}" 
+     {{did-insert this.addBodyClass}} 
+     {{did-update this.updateBodyClass @position @pushMenu}} 
+     {{will-destroy this.removePushClass }} 
+     ...attributes >
+{{yield}}
+</nav>
