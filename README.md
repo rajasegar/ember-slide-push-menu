@@ -10,19 +10,20 @@ Fixed menus that will slide out from the sides of the page and in case of the ri
 
 Inspired by this Codrops [article](https://tympanus.net/codrops/2013/04/17/slide-and-push-menus/)
 
-
 ```sh
 ember install ember-slide-push-menu
 ```
 
 ## Demo
+
 [Demo](https://rajasegar.github.io/ember-slide-push-menu/)
 
 ## Usage
 
-### Render the menu using the component 
+### Render the menu using the component
+
 ```hbs
-{{#esp-menu position="left"  open=showLeftSlideMenu}}
+<EspMenu @position="left" @open={{showLeftSlideMenu}}>
   <h3>Menu</h3>
 	<a href="#">Celery seakale</a>
 	<a href="#">Dulse daikon</a>
@@ -30,32 +31,36 @@ ember install ember-slide-push-menu
 	<a href="#">Catsear azuki bean</a>
 	<a href="#">Dandelion bunya</a>
 	<a href="#">Rutabaga</a>
-{{/esp-menu}}
+</EspMenu>
 ```
 
 ### Trigger the menu using a button
+
 ```hbs
-<button onclick={{action 'toggleMenu' 'showLeftSlideMenu'}}>Show/Hide Left Slide Menu</button>
+<button {{ on "click" (fn this.toggleMenu 'showLeftSlideMenu')}}>Show/Hide Left Slide Menu</button>
 ```
 
 ### Toggle the property set in your component/route/controller
+
 ```js
-export default Ember.Controller.extend({
-  showLeftSlideMenu: false,
+import { action } from '@ember/object';
 
-  actions: {
-    toggleMenu(key) {
-      this.toggleProperty('showLeftSlideMenu');
-    },
-  }
+export default class IndexController extends Controller {
+  showLeftSlideMenu =  false;
 
-});
+  @action
+    toggleMenu() {
+      this.showLeftSlideMenu = !this.showLeftSlideMenu;
+    }
+
+}
 
 ```
 
 ### Use custom class
+
 ```hbs
-{{#esp-menu position="left" pushMenu=pushLeftMenu open=showLeftSlideMenu customClasses='my-custom-menu'}}
+<EspMenu @position="left" @pushMenu={{pushLeftMenu}} @open={{showLeftSlideMenu}} @customClasses="my-custom-menu">
   <h3>Menu</h3>
 	<a href="#">Celery seakale</a>
 	<a href="#">Dulse daikon</a>
@@ -63,10 +68,11 @@ export default Ember.Controller.extend({
 	<a href="#">Catsear azuki bean</a>
 	<a href="#">Dandelion bunya</a>
 	<a href="#">Rutabaga</a>
-{{/esp-menu}}
+</EspMenu>
 ```
 
 ### Customizing with your class for the menus
+
 ```css
 /* Custom classes */
 .my-custom-menu {
@@ -99,26 +105,25 @@ export default Ember.Controller.extend({
 }
 
 ```
+
 ## Running
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+-   `ember serve`
+-   Visit your app at <http://localhost:4200>.
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+-   `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
+-   `ember test`
+-   `ember test --server`
 
 ## Building
 
-* `ember build`
+-   `ember build`
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+For more information on using ember-cli, visit <https://ember-cli.com/>.
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
