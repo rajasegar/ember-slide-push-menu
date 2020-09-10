@@ -6,11 +6,8 @@
 */
 
 
-import { not } from '@ember/object/computed';
-
-import Component from '@ember/component';
-import { computed } from '@ember/object';
-import layout from '../templates/components/esp-menu';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 
 const BODY_PUSH_CLASS = {
   'left': 'cbp-spmenu-push-toright',
@@ -19,28 +16,18 @@ const BODY_PUSH_CLASS = {
   'bottom': null
 };
 
-export default Component.extend({
-  layout,
-  tagName: 'nav',
-  classNames: ['cbp-spmenu'],
-  classNameBindings: [
-    'horizontal:cbp-spmenu-horizontal',
-    'vertical:cbp-spmenu-vertical',
-    'positionClass',
-    'open:cbp-spmenu-open',
-    'customClasses'
-  ],
+export default class EspMenuComponent extends Component {
 
-  /**
-     Boolean flag to set the menu to horizontal or vertical style
+  get classNames() {
+    let str = 'cbp-spmenu ';
+    str += this.args.horizontal ? ' cbp-spmenu-horizontal' : '';
+    str += this.vertical ? ' cbp-spmenu-vertical' : '';
+    str += ' ' + this.positionClass || '';
+    str += this.args.open ? ' cbp-spmenu-open' : '';
+    str += ' ' + this.args.customClasses || '';
+    return str;
+  }
 
-     @public
-     @property horizontal
-     @type { Boolean }
-     @default false
-  */
-
-  horizontal: false,
   /**
      Boolean computed prperty based on the negative value of horizontal
 
@@ -49,7 +36,7 @@ export default Component.extend({
      @type { Computed }
   */
 
-  vertical: not('horizontal'),
+  @tracked vertical = !this.args.horizontal;
   /**
      Boolean flag to render the menu as either slide or push menu
 
@@ -63,38 +50,25 @@ export default Component.extend({
      @default false
   */
 
-  pushMenu: false,
-  positionClass: computed('position', function() {
-    return `cbp-spmenu-${this.get('position')}`;
-  }),
+  @tracked positionClass = `cbp-spmenu-${this.args.position}`;
 
-  bodyClass: computed('position', function() {
-    return BODY_PUSH_CLASS[this.get('position')];
-  }),
 
-  didInsertElement() {
-    this._super(...arguments);
+  addBodyClass() {
     document.body.classList.add('cbp-spmenu-push');
-  },
+  }
 
-  didUpdateAttrs() {
-    this._super(...arguments);
-    this.updateBodyClass();
-  },
-
-  updateBodyClass() {
-    let _bodyClass = this.get('bodyClass');
+  updateBodyClass(element, [position, pushMenu]) {
+    let _bodyClass = BODY_PUSH_CLASS[position];
     // Clean up
     document.body.classList.remove('cbp-spmenu-push-toleft');
     document.body.classList.remove('cbp-spmenu-push-toright');
-    if(this.get('pushMenu')) {
+    if(pushMenu) {
       document.body.classList.add(_bodyClass);
     }
-  },
+  }
 
-  willDestroyElement() {
-    this._super(...arguments);
+  removePushClass() {
     document.body.classList.remove('cbp-spmenu-push');
   }
 
-});
+}

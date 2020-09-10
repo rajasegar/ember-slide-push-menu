@@ -1,17 +1,15 @@
 # ember-slide-push-menu
 
-[![Build Status](https://travis-ci.org/rajasegar/ember-slide-push-menu.svg?branch=master)](https://travis-ci.org/rajasegar/ember-slide-push-menu) 
-[![npm](https://img.shields.io/npm/dm/ember-slide-push-menu.svg)](https://www.npmjs.com/package/ember-slide-push-menu)
+![Build and Deploy](https://github.com/rajasegar/ember-slide-push-menu/workflows/CI/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/rajasegar/ember-slide-push-menu/badge.svg?branch=master)](https://coveralls.io/github/rajasegar/ember-slide-push-menu?branch=master)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm version](http://img.shields.io/npm/v/ember-slide-push-menu.svg?style=flat)](https://npmjs.org/package/ember-slide-push-menu "View this project on npm")
-[![dependencies Status](https://david-dm.org/rajasegar/ember-slide-push-menu/status.svg)](https://david-dm.org/rajasegar/ember-slide-push-menu)
-[![devDependencies Status](https://david-dm.org/rajasegar/ember-slide-push-menu/dev-status.svg)](https://david-dm.org/rajasegar/ember-slide-push-menu?type=dev)
 [![EmberObserver](http://emberobserver.com/badges/ember-slide-push-menu.svg?branch=master)](http://emberobserver.com/addons/ember-slide-push-menu)
 
 Fixed menus that will slide out from the sides of the page and in case of the right and left side optionally move the body.
 
 Inspired by this Codrops [article](https://tympanus.net/codrops/2013/04/17/slide-and-push-menus/)
 
-## Installation
 
 ```sh
 ember install ember-slide-push-menu
