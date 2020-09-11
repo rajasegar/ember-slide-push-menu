@@ -4,6 +4,7 @@ const getChannelURL = require('ember-source-channel-url'); // eslint-disable-lin
 
 module.exports = async function() {
   return {
+    useYarn: true,
     scenarios: [
       {
         name: 'ember-lts-3.16',
@@ -31,6 +32,7 @@ module.exports = async function() {
       },
       {
         name: 'embroider-tests',
+        allowedToFail: true,
         npm: {
           devDependencies: {
             '@embroider/core': '*',
