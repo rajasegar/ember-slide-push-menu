@@ -47,9 +47,27 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: rwjblue/setup-volta@v1
+
+      - name: Get Yarn cache path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache Yarn cache and node_modules
+        id: cache-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            node_modules
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
+
+      - name: Install
+        run: yarn install --frozen-lockfile
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+
       - name: Build
         run: |
-          yarn
           yarn ember build --environment=production
           cp dist/index.html dist/404.html
       - name: Deploy
