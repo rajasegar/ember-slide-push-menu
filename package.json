@@ -36,8 +36,8 @@
   "devDependencies": {
     "@ember/optional-features": "2.0.0",
     "@ember/render-modifiers": "1.0.2",
-    "@glimmer/component": "^1.0.1",
-    "@glimmer/tracking": "^1.0.1",
+    "@glimmer/component": "1.0.4",
+    "@glimmer/tracking": "1.0.4",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "babel-eslint": "^10.1.0",
