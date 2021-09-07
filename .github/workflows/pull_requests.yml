@@ -1,7 +1,5 @@
 name: Pull Requests
 
-# Inspiration:
-# https://github.com/alexdiliberto/ember-transformicons/blob/master/.github/workflows/ci.yml
 on:
   pull_request:
 
@@ -10,95 +8,16 @@ env:
 
 jobs:
   lint:
-    name: Lint
+    name: Lint and Test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - uses: rwjblue/setup-volta@v1
-
-    - name: Get Yarn cache path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-
-    - name: Cache Yarn cache and node_modules
-      id: cache-dependencies
-      uses: actions/cache@v2
-      with:
-        path: |
-          ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          node_modules
-        key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
-
     - name: Install
       run: yarn install --frozen-lockfile
-      if: steps.cache-dependencies.outputs.cache-hit != 'true'
     - name: ESLint
       run: yarn lint:js
     - name: Templates
       run: yarn lint:hbs
-
-  # coverage:
-  #   name: Coverage
-  #   runs-on: ubuntu-latest
-  #   steps:
-
-  #   - uses: actions/checkout@v1
-  #   - uses: rwjblue/setup-volta@v1
-
-  #   - name: Get Yarn cache path
-  #     id: yarn-cache-dir-path
-  #     run: echo "::set-output name=dir::$(yarn cache dir)"
-
-  #   - name: Cache Yarn cache and node_modules
-  #     id: cache-dependencies
-  #     uses: actions/cache@v2
-  #     with:
-  #       path: |
-  #         ${{ steps.yarn-cache-dir-path.outputs.dir }}
-  #         node_modules
-  #       key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-  #       restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
-
-  #   - name: Install
-  #     run: yarn install --frozen-lockfile
-  #     if: steps.cache-dependencies.outputs.cache-hit != 'true'
-
-  #   - name: run coveralls
-  #     env:
-  #       COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
-  #     run: |
-  #       yarn test:ember
-  #       yarn coveralls
-
-  #   - name: Coveralls
-  #     uses: coverallsapp/github-action@master
-  #     with:
-  #       github-token: ${{ secrets.GITHUB_TOKEN }}
-
-  tests_ember_compat:
-    name: Ember Compatability
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: rwjblue/setup-volta@v1
-
-    - name: Get Yarn cache path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-
-    - name: Cache Yarn cache and node_modules
-      id: cache-dependencies
-      uses: actions/cache@v2
-      with:
-        path: |
-          ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          node_modules
-        key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
-
-    - name: Install
-      run: yarn install --frozen-lockfile
-      if: steps.cache-dependencies.outputs.cache-hit != 'true'
     - name: Test with  ember-try
       run: yarn test:ember-compatibility 
