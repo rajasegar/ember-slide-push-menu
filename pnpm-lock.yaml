@@ -10,7 +10,7 @@ specifiers:
   babel-eslint: ^10.1.0
   broccoli-asset-rev: 3.0.0
   coveralls: 3.1.1
-  ember-addon-starterkit: 0.1.11
+  ember-addon-starterkit: 0.3.0
   ember-auto-import: 1.12.0
   ember-cli: 3.21.2
   ember-cli-babel: 7.26.6
@@ -49,7 +49,7 @@ devDependencies:
   babel-eslint: 10.1.0_eslint@7.32.0
   broccoli-asset-rev: 3.0.0
   coveralls: 3.1.1
-  ember-addon-starterkit: 0.1.11
+  ember-addon-starterkit: 0.3.0
   ember-auto-import: 1.12.0
   ember-cli: 3.21.2
   ember-cli-code-coverage: 1.0.3
@@ -3363,7 +3363,7 @@ packages:
   /async/2.6.3:
     resolution: {integrity: sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==}
     dependencies:
-      lodash: 4.17.20
+      lodash: 4.17.21
 
   /asynckit/0.4.0:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
@@ -3653,6 +3653,11 @@ packages:
   /babel-plugin-htmlbars-inline-precompile/1.0.0:
     resolution: {integrity: sha512-4jvKEHR1bAX03hBDZ94IXsYCj3bwk9vYsn6ux6JZNL2U5pvzCWjqyrGahfsGNrhERyxw8IqcirOi9Q6WCo3dkQ==}
     engines: {node: '>= 4'}
+    dev: true
+
+  /babel-plugin-htmlbars-inline-precompile/3.2.0:
+    resolution: {integrity: sha512-IUeZmgs9tMUGXYu1vfke5I18yYJFldFGdNFQOWslXTnDWXzpwPih7QFduUqvT+awDpDuNtXpdt5JAf43Q1Hhzg==}
+    engines: {node: 8.* || 10.* || >= 12.*}
     dev: true
 
   /babel-plugin-htmlbars-inline-precompile/5.3.0:
@@ -4521,6 +4526,12 @@ packages:
     resolution: {integrity: sha512-l6qDuboJThHfRVVWQVaTs++bFdrFTP0gJXgsWenczc1PavRVUmL1Eyb2swTAXXMpDOnr2zhNOBLx4w9AxkqbPQ==}
     engines: {node: 8.* || >= 10.*}
 
+  /broccoli-output-wrapper/2.0.0:
+    resolution: {integrity: sha512-V/ozejo+snzNf75i/a6iTmp71k+rlvqjE3+jYfimuMwR1tjNNRdtfno+NGNQB2An9bIAeqZnKhMDurAznHAdtA==}
+    dependencies:
+      heimdalljs-logger: 0.1.10
+    dev: true
+
   /broccoli-output-wrapper/3.2.3:
     resolution: {integrity: sha512-vzbm4j59Wr5vr/O50LD43Np1jbLBWJ/vhppzL/UXWf39xac9grJtrlx9SSy+pDRNT2LGBHNIGPOhdqwp94q2Pg==}
     engines: {node: 10.* || >= 12.*}
@@ -4603,6 +4614,19 @@ packages:
     resolution: {integrity: sha512-ElE4caljW4slapyEhSD9jU9Uayc8SoSABWdmY9SqbV8DHNxU6xg1jJsPcMm+cXOvggR3+G+OXAYQeFjWVnznaw==}
     engines: {node: 6.* || 8.* || >= 10.*}
     dependencies:
+      promise-map-series: 0.2.3
+      quick-temp: 0.1.8
+      rimraf: 2.7.1
+      symlink-or-copy: 1.3.1
+    dev: true
+
+  /broccoli-plugin/3.1.0:
+    resolution: {integrity: sha512-7w7FP8WJYjLvb0eaw27LO678TGGaom++49O1VYIuzjhXjK5kn2+AMlDm7CaUFw4F7CLGoVQeZ84d8gICMJa4lA==}
+    engines: {node: 8.* || 10.* || >= 12.*}
+    dependencies:
+      broccoli-node-api: 1.7.0
+      broccoli-output-wrapper: 2.0.0
+      fs-merger: 3.1.0
       promise-map-series: 0.2.3
       quick-temp: 0.1.8
       rimraf: 2.7.1
@@ -5937,13 +5961,12 @@ packages:
       minimalistic-crypto-utils: 1.0.1
     dev: true
 
-  /ember-addon-starterkit/0.1.11:
-    resolution: {integrity: sha1-mdFxOX+Mct01TQWZBmkMbB2FQQw=}
-    engines: {node: '>= 4'}
+  /ember-addon-starterkit/0.3.0:
+    resolution: {integrity: sha512-ctl+MLyukJLgKFABmaaqlHJapN/3ifGPq5xqyNR/lwsgFjQg/4yd1n7KGrHKXFSOi9Fqede/uPDFMBq8dbVStQ==}
+    engines: {node: 10.* || >= 12}
     dependencies:
-      ember-cli-babel: 6.18.0
-    transitivePeerDependencies:
-      - '@babel/core'
+      ember-cli-babel: 7.26.6
+      ember-cli-htmlbars: 4.5.0
     dev: true
 
   /ember-assign-polyfill/2.4.0:
@@ -6118,6 +6141,26 @@ packages:
       hash-for-dep: 1.5.1
       heimdalljs-logger: 0.1.10
       silent-error: 1.1.1
+    dev: true
+
+  /ember-cli-htmlbars/4.5.0:
+    resolution: {integrity: sha512-bYJpK1pqFu9AadDAGTw05g2LMNzY8xTCIqQm7dMJmKEoUpLRFbPf4SfHXrktzDh7Q5iggl6Skzf1M0bPlIxARw==}
+    engines: {node: 8.* || 10.* || >= 12.*}
+    dependencies:
+      '@ember/edition-utils': 1.2.0
+      babel-plugin-htmlbars-inline-precompile: 3.2.0
+      broccoli-debug: 0.6.5
+      broccoli-persistent-filter: 2.3.1
+      broccoli-plugin: 3.1.0
+      common-tags: 1.8.0
+      ember-cli-babel-plugin-helpers: 1.1.1
+      fs-tree-diff: 2.0.1
+      hash-for-dep: 1.5.1
+      heimdalljs-logger: 0.1.10
+      json-stable-stringify: 1.0.1
+      semver: 6.3.0
+      strip-bom: 4.0.0
+      walk-sync: 2.2.0
     dev: true
 
   /ember-cli-htmlbars/5.7.1:
@@ -9416,10 +9459,10 @@ packages:
 
   /lodash/4.17.20:
     resolution: {integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==}
+    dev: true
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-driver/1.2.7:
     resolution: {integrity: sha512-U7KCmLdqsGHBLeWqYlFA0V0Sl6P08EE1ZrmA9cxjUE0WVqT9qnyVDPz1kzpFEP0jdJuFnasWIfSd7fsaNXkpbg==}
@@ -12280,7 +12323,6 @@ packages:
   /strip-bom/4.0.0:
     resolution: {integrity: sha512-3xurFv5tEgii33Zi8Jtp55wEIILR9eh34FAW00PZf+JnSsTmV/ioewSgQl97JHvgjoRGwPShsWm+IdrxB35d0w==}
     engines: {node: '>=8'}
-    dev: false
 
   /strip-eof/1.0.0:
     resolution: {integrity: sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=}
