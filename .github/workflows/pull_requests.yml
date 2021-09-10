@@ -11,7 +11,7 @@ jobs:
     name: Lint and Test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - uses: rwjblue/setup-volta@v1
     - name: Install
       run: yarn install --frozen-lockfile
