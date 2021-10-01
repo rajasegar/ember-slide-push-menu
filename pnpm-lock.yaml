@@ -27,7 +27,7 @@ specifiers:
   ember-qunit: 4.6.0
   ember-resolver: 8.0.3
   ember-source: 3.28.1
-  ember-template-lint: 3.7.0
+  ember-template-lint: 3.8.0
   ember-try: 1.4.0
   eslint: 7.32.0
   eslint-plugin-node: 11.1.0
@@ -64,7 +64,7 @@ devDependencies:
   ember-qunit: 4.6.0
   ember-resolver: 8.0.3
   ember-source: 3.28.1
-  ember-template-lint: 3.7.0
+  ember-template-lint: 3.8.0
   ember-try: 1.4.0
   eslint: 7.32.0
   eslint-plugin-node: 11.1.0_eslint@7.32.0
@@ -3357,6 +3357,7 @@ packages:
 
   /async-each/1.0.3:
     resolution: {integrity: sha512-z/WhQ5FPySLdvREByI2vZiTWwCnF0moMJ1hK9YQwDTHKh6I7/uSckMetoRGb5UBZPC1z0jlw+n/XCgjeH7y1AQ==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -4133,6 +4134,7 @@ packages:
   /binary-extensions/1.13.1:
     resolution: {integrity: sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -4148,6 +4150,7 @@ packages:
 
   /bindings/1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    requiresBuild: true
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
@@ -5102,6 +5105,7 @@ packages:
   /chokidar/2.1.8:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==}
     deprecated: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+    requiresBuild: true
     dependencies:
       anymatch: 2.0.0
       async-each: 1.0.3
@@ -5109,7 +5113,7 @@ packages:
       glob-parent: 3.1.0
       inherits: 2.0.4
       is-binary-path: 1.0.1
-      is-glob: 4.0.1
+      is-glob: 4.0.3
       normalize-path: 3.0.0
       path-is-absolute: 1.0.1
       readdirp: 2.2.1
@@ -5122,6 +5126,7 @@ packages:
   /chokidar/3.4.2:
     resolution: {integrity: sha512-IZHaDeBeI+sZJRX7lGcXsdzgvZqKv6sECqsbErJA4mHWfpRrD8B97kSFN4cQz6nGBGiuFia1MKR4d6c1o8Cv7A==}
     engines: {node: '>= 8.10.0'}
+    requiresBuild: true
     dependencies:
       anymatch: 3.1.1
       braces: 3.0.2
@@ -5148,6 +5153,10 @@ packages:
 
   /ci-info/2.0.0:
     resolution: {integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==}
+    dev: true
+
+  /ci-info/3.2.0:
+    resolution: {integrity: sha512-dVqRX7fLUm8J6FgHJ418XuIgDLZDkYcDFTeL6TA2gt5WlIZUQrrH6EZrNClwT/H0FateUsZkGIOPRrLbP+PR9A==}
     dev: true
 
   /cipher-base/1.0.4:
@@ -5736,8 +5745,8 @@ packages:
       whatwg-url: 8.7.0
     dev: true
 
-  /date-fns/2.23.0:
-    resolution: {integrity: sha512-5ycpauovVyAk0kXNZz6ZoB9AYMZB4DObse7P3BPWmyEjXNORTI8EJ6X0uaSAq4sCHzM1uajzrkr6HnsLQpxGXA==}
+  /date-fns/2.24.0:
+    resolution: {integrity: sha512-6ujwvwgPID6zbI0o7UbURi2vlLDR9uP26+tW6Lg+Ji3w7dd0i3DOcjcClLjLPranT60SSEFBwdSyYwn/ZkPIuw==}
     engines: {node: '>=0.11'}
     dev: true
 
@@ -6634,20 +6643,21 @@ packages:
       - '@babel/core'
     dev: true
 
-  /ember-template-lint/3.7.0:
-    resolution: {integrity: sha512-C3oFFdB+g14CvFKZrnAS8Yt0IojTpOhdU5KZoLUs6hOgQjkEF4l/OCBNPtBmL8Nm/dxmc5iTsd5TL98CCcnK+w==}
+  /ember-template-lint/3.8.0:
+    resolution: {integrity: sha512-saaJz6ZK/B4jz1pdfJlkRimnwtOKfDZRhw3eAcO5P6OD/pV5ZKMRniy1AyX7E2jymkGc6pbs8dUrhF08Usivrw==}
     engines: {node: '>= 10.24 < 11 || 12.* || >= 14.*'}
     hasBin: true
     dependencies:
       '@ember-template-lint/todo-utils': 10.0.0
       chalk: 4.1.2
-      date-fns: 2.23.0
+      ci-info: 3.2.0
+      date-fns: 2.24.0
       ember-template-recast: 5.0.3
       find-up: 5.0.0
       fuse.js: 6.4.6
       get-stdin: 8.0.0
       globby: 11.0.4
-      is-glob: 4.0.1
+      is-glob: 4.0.3
       micromatch: 4.0.4
       requireindex: 1.2.0
       resolve: 1.20.0
@@ -7394,6 +7404,7 @@ packages:
 
   /file-uri-to-path/1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -7794,6 +7805,7 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     deprecated: '"Please update to latest v2.3 or v2.2"'
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -7955,6 +7967,7 @@ packages:
 
   /glob-parent/3.1.0:
     resolution: {integrity: sha1-nmr2KZ2NO9K9QEMIMr0RPfkGxa4=}
+    requiresBuild: true
     dependencies:
       is-glob: 3.1.0
       path-dirname: 1.0.2
@@ -8632,6 +8645,7 @@ packages:
   /is-binary-path/1.0.1:
     resolution: {integrity: sha1-dfFmQrSA8YenEcgUFh/TpKdlWJg=}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       binary-extensions: 1.13.1
     dev: true
@@ -8758,6 +8772,13 @@ packages:
 
   /is-glob/4.0.1:
     resolution: {integrity: sha512-5G0tKtBTFImOqDnLB2hG6Bp2qcKEFduo4tZu9MT/H6NQv/ghhy30o55ufafxJ/LdH79LLs2Kfrn85TLKyA7BUg==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      is-extglob: 2.1.1
+    dev: true
+
+  /is-glob/4.0.3:
+    resolution: {integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       is-extglob: 2.1.1
@@ -10019,6 +10040,7 @@ packages:
 
   /nan/2.14.1:
     resolution: {integrity: sha512-isWHgVjnFjh2x2yuJ/tj3JbwoHu3UC2dX5G/88Cm24yB6YopVgxvBObDY7n5xW6ExmFhJpSEQqFPvq9zaXc8Jw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -10773,6 +10795,7 @@ packages:
 
   /path-dirname/1.0.2:
     resolution: {integrity: sha1-zDPSTVJeCZpTiMAzbG4yuRYGCeA=}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -11241,6 +11264,7 @@ packages:
   /readdirp/2.2.1:
     resolution: {integrity: sha512-1JU/8q+VgFZyxwrJ+SVIOsh+KywWGpds3NTqikiKpDMZWScmAYyKIgqkO+ARvNWJfXeXR1zxz7aHF4u4CyH6vQ==}
     engines: {node: '>=0.10'}
+    requiresBuild: true
     dependencies:
       graceful-fs: 4.2.4
       micromatch: 3.1.10
@@ -12940,6 +12964,7 @@ packages:
     resolution: {integrity: sha512-kBFT3U4Dcj4/pJ52vfjCSfyLyvG9VYYuGYPmrPvAxRw/i7xHiT4VvCev+uiEMcEEiu6UNB6KgWmGtSUYIWScbw==}
     engines: {node: '>=0.8.0'}
     hasBin: true
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -13061,6 +13086,7 @@ packages:
   /upath/1.2.0:
     resolution: {integrity: sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==}
     engines: {node: '>=4'}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -13256,6 +13282,7 @@ packages:
   /watchpack-chokidar2/2.0.0:
     resolution: {integrity: sha512-9TyfOyN/zLUbA288wZ8IsMZ+6cbzvsNyEzSBp6e/zkifi6xxbl8SmQ/CxQq32k8NNqrdVEVUVSEf56L4rQ/ZxA==}
     engines: {node: <8.10.0}
+    requiresBuild: true
     dependencies:
       chokidar: 2.1.8
     dev: true
