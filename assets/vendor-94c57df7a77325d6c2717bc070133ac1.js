@@ -4970,7 +4970,7 @@ if("Map"===n||"Set"===n)return Array.from(e)
 if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return r(e,t)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function r(e,t){(null==t||t>e.length)&&(t=e.length)
 for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n]
 return r}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var i=(0,t.setModifierManager)((function(){return{capabilities:(0,t.capabilities)("3.13",{disableAutoTracking:!0}),createModifier:function(){},installModifier:function(e,t,r){var i=n(r.positional);(0,i[0])(t,i.slice(1),r.named)},updateModifier:function(){},destroyModifier:function(){}}}),(function e(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e)}))
+var i=(0,t.setModifierManager)((function(){return{capabilities:(0,t.capabilities)("3.22",{disableAutoTracking:!0}),createModifier:function(){},installModifier:function(e,t,r){var i=n(r.positional);(0,i[0])(t,i.slice(1),r.named)},updateModifier:function(){},destroyModifier:function(){}}}),(function e(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e)}))
 e.default=i})),define("@ember/render-modifiers/modifiers/did-update",["exports","@ember/modifier"],(function(e,t){"use strict"
 function n(e){return function(e){if(Array.isArray(e))return e}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return
 if("string"==typeof e)return r(e,t)
@@ -4980,7 +4980,9 @@ if("Map"===n||"Set"===n)return Array.from(e)
 if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return r(e,t)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function r(e,t){(null==t||t>e.length)&&(t=e.length)
 for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n]
 return r}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var i=(0,t.setModifierManager)((function(){return{capabilities:(0,t.capabilities)("3.13",{disableAutoTracking:!0}),createModifier:function(){return{element:null}},installModifier:function(e,t){e.element=t},updateModifier:function(e,t){var r=e.element,i=n(t.positional);(0,i[0])(r,i.slice(1),t.named)},destroyModifier:function(){}}}),(function e(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e)}))
+var i=(0,t.setModifierManager)((function(){return{capabilities:(0,t.capabilities)("3.22",{disableAutoTracking:!1}),createModifier:function(){return{element:null}},installModifier:function(e,t,n){e.element=t,n.positional.forEach((function(){})),n.named&&Object.values(n.named)},updateModifier:function(e,t){var r=e.element
+t.positional.forEach((function(){})),t.named&&Object.values(t.named)
+var i=n(t.positional);(0,i[0])(r,i.slice(1),t.named)},destroyModifier:function(){}}}),(function e(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e)}))
 e.default=i})),define("@ember/render-modifiers/modifiers/will-destroy",["exports","@ember/modifier"],(function(e,t){"use strict"
 function n(e){return function(e){if(Array.isArray(e))return e}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return
 if("string"==typeof e)return r(e,t)
@@ -4990,7 +4992,7 @@ if("Map"===n||"Set"===n)return Array.from(e)
 if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return r(e,t)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function r(e,t){(null==t||t>e.length)&&(t=e.length)
 for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n]
 return r}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var i=(0,t.setModifierManager)((function(){return{capabilities:(0,t.capabilities)("3.13",{disableAutoTracking:!0}),createModifier:function(){return{element:null}},installModifier:function(e,t){e.element=t},updateModifier:function(){},destroyModifier:function(e,t){var r=e.element,i=n(t.positional);(0,i[0])(r,i.slice(1),t.named)}}}),(function e(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e)}))
+var i=(0,t.setModifierManager)((function(){return{capabilities:(0,t.capabilities)("3.22",{disableAutoTracking:!0}),createModifier:function(){return{element:null}},installModifier:function(e,t){e.element=t},updateModifier:function(){},destroyModifier:function(e,t){var r=e.element,i=n(t.positional);(0,i[0])(r,i.slice(1),t.named)}}}),(function e(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e)}))
 e.default=i})),define("@glimmer/component/-private/base-component-manager",["exports","@glimmer/component/-private/component"],(function(e,t){"use strict"
 function n(e,t){for(var n=0;n<t.length;n++){var r=t[n]
 r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(e,t,r){return function(){function i(t){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,i),function(e,t,n){t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n}(this,"capabilities",r),e(this,t)}return function(e,t,r){t&&n(e.prototype,t)
