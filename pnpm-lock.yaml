@@ -27,7 +27,7 @@ specifiers:
   ember-qunit: 4.6.0
   ember-resolver: 8.0.3
   ember-source: 3.28.1
-  ember-template-lint: 3.9.0
+  ember-template-lint: 3.10.0
   ember-try: 1.4.0
   eslint: 7.32.0
   eslint-plugin-node: 11.1.0
@@ -64,7 +64,7 @@ devDependencies:
   ember-qunit: 4.6.0
   ember-resolver: 8.0.3
   ember-source: 3.28.1
-  ember-template-lint: 3.9.0
+  ember-template-lint: 3.10.0
   ember-try: 1.4.0
   eslint: 7.32.0
   eslint-plugin-node: 11.1.0_eslint@7.32.0
@@ -5768,8 +5768,8 @@ packages:
       whatwg-url: 8.7.0
     dev: true
 
-  /date-fns/2.24.0:
-    resolution: {integrity: sha512-6ujwvwgPID6zbI0o7UbURi2vlLDR9uP26+tW6Lg+Ji3w7dd0i3DOcjcClLjLPranT60SSEFBwdSyYwn/ZkPIuw==}
+  /date-fns/2.25.0:
+    resolution: {integrity: sha512-ovYRFnTrbGPD4nqaEqescPEv1mNwvt+UTqI3Ay9SzNtey9NZnYu6E2qCcBBgJ6/2VF1zGGygpyTDITqpQQ5e+w==}
     engines: {node: '>=0.11'}
     dev: true
 
@@ -6692,15 +6692,15 @@ packages:
       - '@babel/core'
     dev: true
 
-  /ember-template-lint/3.9.0:
-    resolution: {integrity: sha512-qo3iMiiP+a+5K4E1AlH+PSPbXBLP8fgb2BYwyUQ8k6IIs6Z00Ct2ySd3BWxGL2rw+Dyp53yJ5Zj8sSSYDFDTkg==}
+  /ember-template-lint/3.10.0:
+    resolution: {integrity: sha512-QP6gN9FwZbK+ypDr5PLXeKMPuAvKwfOWpIoqVD6DB660evnKE+rXfAdNga3CqSC7mDekpgJoLuxVQUw9oLcnjQ==}
     engines: {node: '>= 10.24 < 11 || 12.* || >= 14.*'}
     hasBin: true
     dependencies:
       '@ember-template-lint/todo-utils': 10.0.0
       chalk: 4.1.2
       ci-info: 3.2.0
-      date-fns: 2.24.0
+      date-fns: 2.25.0
       ember-template-recast: 5.0.3
       find-up: 5.0.0
       fuse.js: 6.4.6
@@ -9922,14 +9922,6 @@ packages:
       to-regex: 3.0.2
     dev: true
 
-  /micromatch/4.0.2:
-    resolution: {integrity: sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q==}
-    engines: {node: '>=8'}
-    dependencies:
-      braces: 3.0.2
-      picomatch: 2.2.2
-    dev: true
-
   /micromatch/4.0.4:
     resolution: {integrity: sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==}
     engines: {node: '>=8.6'}
@@ -10911,6 +10903,7 @@ packages:
     resolution: {integrity: sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==}
     engines: {node: '>=8.6'}
     dev: true
+    optional: true
 
   /picomatch/2.3.0:
     resolution: {integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==}
