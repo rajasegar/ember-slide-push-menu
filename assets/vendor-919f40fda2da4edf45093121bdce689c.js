@@ -812,7 +812,7 @@ e(1),e(3),e(2),e(9),e(8),e(11),e(10),e(12),e(5),e(6),e(4),e(7),e(304),e(305)},{1
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   3.28.1
+ * @version   3.28.2
  */
 var e,t;(function(){var n="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:null
 if(null===n)throw new Error("unable to locate global object")
@@ -4558,7 +4558,7 @@ return r.Adapter=i,r.QUnitAdapter=o,Object.defineProperty(B,"Test",{configurable
 var G=B
 t.default=G})),e("ember/version",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="3.28.1"})),e("route-recognizer",["exports"],(function(e){"use strict"
+e.default="3.28.2"})),e("route-recognizer",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Object.create
 function n(){var e=t(null)
